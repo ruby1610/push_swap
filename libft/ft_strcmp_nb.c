@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_strcmp_nb.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maraasve <maraasve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/20 15:59:32 by maraasve          #+#    #+#             */
-/*   Updated: 2024/02/21 17:33:32 by maraasve         ###   ########.fr       */
+/*   Created: 2024/02/21 15:53:47 by maraasve          #+#    #+#             */
+/*   Updated: 2024/02/21 16:42:42 by maraasve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-
-# include "libft/libft.h"
-# include <stdio.h>
-
-typedef struct s_stack
+int	ft_strcmp_nb(char *s1, char *s2)
 {
-	int				value;
-	int				position;
-	struct s_stack	*previous;
-	struct s_stack	*next;
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	if (s1[i] == '+')
+	{
+		if (s2[j] != '+')
+			i++;
+	}
+	else
+	{
+		if (s2[j] == '+')
+			j++;
+	}
+	while (s1[i] && s2[j] && s1[i] == s2[j])
+	{
+		i++;
+		j++;
+	}
+	return ((unsigned char)s1[i] - (unsigned char)s2[j]);
 }
-t_stack;
-
-int	input_checker(char *argv[]);
-int	is_number(char *str);
-int	is_zero(char *str);
-int	has_duplicates(char *argv[]);
-int	is_sign(char c);
-
-#endif

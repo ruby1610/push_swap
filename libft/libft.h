@@ -6,7 +6,7 @@
 /*   By: maraasve <maraasve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 13:05:46 by maraasve          #+#    #+#             */
-/*   Updated: 2024/02/16 15:03:00 by maraasve         ###   ########.fr       */
+/*   Updated: 2024/02/21 16:45:43 by maraasve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int		ft_isdigit(int c);
 int		ft_isprint(int c);
 int		ft_memcmp(void *s1, void *s2, size_t n);
 int		ft_strncmp(char *s1, char *s2, size_t n);
+int		ft_strcmp_nb(char *s1, char *s2);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 int		ft_lstsize(t_list *lst);

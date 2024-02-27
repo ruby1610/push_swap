@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: maraasve <maraasve@student.42.fr>          +#+  +:+       +#+         #
+#    By: marieke <marieke@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/21 16:50:33 by maraasve          #+#    #+#              #
-#    Updated: 2024/02/21 17:27:27 by maraasve         ###   ########.fr        #
+#    Updated: 2024/02/27 16:44:48 by marieke          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror -g
 AR = ar -rcs
 
-SRC = main.c input_check.c
+SRC = main.c input_check.c parser.c utils.c stack.c
 LIBFT_DIR = libft
 LIBFT_NAME = libft.a
 OBJ_DIR = obj
@@ -39,7 +39,7 @@ clean:
 	@make -C $(LIBFT_DIR) clean
 	@$(RM) -rf $(OBJ_DIR)
 
-fclean:
+fclean: clean
 	@make -C $(LIBFT_DIR) fclean
 	@$(RM) $(NAME)
 

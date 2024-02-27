@@ -1,36 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marieke <marieke@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/03 11:01:41 by marieke           #+#    #+#             */
-/*   Updated: 2024/02/27 13:48:25 by marieke          ###   ########.fr       */
+/*   Created: 2024/02/27 14:59:13 by marieke           #+#    #+#             */
+/*   Updated: 2024/02/27 15:52:37 by marieke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-long	ft_atoi(char *str)
-{
-	int		i;
-	int		sign;
-	long	number;
+#include "push_swap.h"
 
-	i = 0;
-	sign = 1;
-	number = 0;
-	while (str[i] == ' ' || (str[i] >= '\t' && str[i] <= '\r'))
-		i++;
-	if (str[i] == '+' || str[i] == '-')
+void	free_stack(t_stack **stack)
+{
+	t_stack	*tmp;
+
+	if (!stack || !(*stack))
+		return ;
+	while (*stack)
 	{
-		if (str[i] == '-')
-			sign = -1;
-		i++;
+		tmp = (*stack)->next;
+		free(*stack);
+		*stack = tmp;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		number = number * 10 + (str[i] - 48);
-		i++;
-	}
-	return (number * sign);
+	*stack = NULL;
 }
+
+void	exit_error(t_stack **B, t_stack **A)
+{
+	if (A != NULL && (*A) != NULL)
+		free_stack(A);	
+	if (B != NULL && (*B) != NULL)
+		free_stack(B);
+	ft_putstr_fd("Error\n", 2);
+	exit(1);
+}
+

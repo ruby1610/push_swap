@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marieke <marieke@student.42.fr>            +#+  +:+       +#+         #
+#    By: maraasve <maraasve@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/21 16:50:33 by maraasve          #+#    #+#              #
-#    Updated: 2024/02/27 16:44:48 by marieke          ###   ########.fr        #
+#    Updated: 2024/02/28 14:51:11 by maraasve         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror -g
 AR = ar -rcs
 
-SRC = main.c input_check.c parser.c utils.c stack.c
+SRC =  input_check.c main.c parser.c push.c rotate.c stack.c swap.c utils.c 
 LIBFT_DIR = libft
 LIBFT_NAME = libft.a
 OBJ_DIR = obj

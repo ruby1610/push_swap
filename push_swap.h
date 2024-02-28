@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marieke <marieke@student.42.fr>            +#+  +:+       +#+        */
+/*   By: maraasve <maraasve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 15:59:32 by maraasve          #+#    #+#             */
-/*   Updated: 2024/02/27 18:43:52 by marieke          ###   ########.fr       */
+/*   Updated: 2024/02/28 14:50:53 by maraasve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,19 @@ t_stack *stack_new(int value);
 t_stack	*get_bottom(t_stack *stack);
 void	stack_add_bottom(t_stack **stack, t_stack **new);
 
+/*sort*/
+int		is_sorted(t_stack *A);
+
+/*swap*/
+void	swap(t_stack *stack);
+void	sa(t_stack *A);
+void	sb(t_stack *B);
+void	ss(t_stack *A, t_stack *B);
+
+/*push*/
+void	push(t_stack **stack_src, t_stack **stack_dst);
+void	pa(t_stack **A, t_stack **B);
+void	pb(t_stack **A, t_stack **B);
+
+/*rotate*/
 #endif

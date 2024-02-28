@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marieke <marieke@student.42.fr>            +#+  +:+       +#+        */
+/*   By: maraasve <maraasve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 11:01:41 by marieke           #+#    #+#             */
-/*   Updated: 2024/02/27 13:48:25 by marieke          ###   ########.fr       */
+/*   Updated: 2024/02/28 17:05:51 by maraasve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-long	ft_atoi(char *str)
+long int	ft_atoi(char *str)
 {
-	int		i;
-	int		sign;
-	long	number;
+	int			i;
+	int			sign;
+	long int	number;
 
 	i = 0;
 	sign = 1;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marieke <marieke@student.42.fr>            +#+  +:+       +#+        */
+/*   By: maraasve <maraasve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 13:48:35 by marieke           #+#    #+#             */
-/*   Updated: 2024/02/27 18:43:25 by marieke          ###   ########.fr       */
+/*   Updated: 2024/02/28 17:07:28 by maraasve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 t_stack	*innit_stack(int argc, char *argv[])
 {
-	t_stack	*A;
-	t_stack	*new;
-	long	nb;
-	int		i;
+	t_stack		*A;
+	t_stack		*new;
+	long int	nb;
+	int			i;
 
 	i = 1;
 	while(i < argc)

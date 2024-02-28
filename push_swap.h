@@ -6,7 +6,7 @@
 /*   By: maraasve <maraasve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 15:59:32 by maraasve          #+#    #+#             */
-/*   Updated: 2024/02/28 14:50:53 by maraasve         ###   ########.fr       */
+/*   Updated: 2024/02/28 16:56:10 by maraasve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,14 @@ void	stack_add_bottom(t_stack **stack, t_stack **new);
 
 /*sort*/
 int		is_sorted(t_stack *A);
+void	sort(t_stack **A, t_stack **B, int stack_size);
+void	sort_three(t_stack **A, int stack_size);
 
 /*swap*/
-void	swap(t_stack *stack);
-void	sa(t_stack *A);
-void	sb(t_stack *B);
-void	ss(t_stack *A, t_stack *B);
+void	swap(t_stack **stack);
+void	sa(t_stack **A);
+void	sb(t_stack **B);
+void	ss(t_stack **A, t_stack **B);
 
 /*push*/
 void	push(t_stack **stack_src, t_stack **stack_dst);
@@ -65,4 +67,15 @@ void	pa(t_stack **A, t_stack **B);
 void	pb(t_stack **A, t_stack **B);
 
 /*rotate*/
+void	rotate(t_stack **stack);
+void	ra(t_stack **A);
+void	rb(t_stack **B);
+void	rr(t_stack **A, t_stack **B);
+
+/*reverse_rotate*/
+void	reverse_rotate(t_stack **stack);
+void	rra(t_stack **A);
+void	rrb(t_stack **B);
+void	rrr(t_stack **A, t_stack **B);
+
 #endif

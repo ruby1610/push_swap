@@ -6,11 +6,12 @@
 /*   By: maraasve <maraasve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 15:59:01 by maraasve          #+#    #+#             */
-/*   Updated: 2024/02/28 16:57:06 by maraasve         ###   ########.fr       */
+/*   Updated: 2024/03/01 16:19:53 by maraasve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 
 int	main(int argc, char *argv[])
 {
@@ -28,12 +29,66 @@ int	main(int argc, char *argv[])
 		exit_error(NULL, NULL);
 	stack_size = argc - 1;
 	get_index(&A, stack_size);
+
+
+	printf("stack A:");
+	for (t_stack *tmp = A; tmp != NULL; tmp = tmp->next)
+	{
+		printf ("%i ", tmp->value);
+	}
+	printf("\n");
+	printf("stack A index:");
+	for (t_stack *tmp = A; tmp != NULL; tmp = tmp->next)
+	{
+		printf ("%i ", tmp->index);
+	}
+	printf("\n");
+
+
+	
 	if (stack_size == 2 && !is_sorted(A))
 		sa(&A);
-	// else if (stack_size == 3 && !is_sorted(A))
-	// 	sort_three(&A, stack_size);
-	// else if (stack_size > 3 && !is_sorted(A))
-	// 	sort(&A, &B, stack_size);
+	else if (stack_size == 3 && !is_sorted(A))
+		sort_three(&A);
+	else if (stack_size > 3 && !is_sorted(A))
+		sort_bigger_stack(&A, &B, stack_size);
+
+
+
+	
+	printf("stack A:");
+	for (t_stack *tmp = A; tmp != NULL; tmp = tmp->next)
+	{
+		printf ("%i ", tmp->value);
+	}
+	printf("\n");
+	printf("stack A index:");
+	for (t_stack *tmp = A; tmp != NULL; tmp = tmp->next)
+	{
+		printf ("%i ", tmp->index);
+	}
+	printf("\n");	
+	printf("stack B:");
+	for (t_stack *tmp = B; tmp != NULL; tmp = tmp->next)
+	{
+		printf ("%i ", tmp->value);
+	}
+	printf("\n");
+	printf("stack B index:");
+	for (t_stack *tmp = B; tmp != NULL; tmp = tmp->next)
+	{
+		printf ("%i ", tmp->index);
+	}
+	printf("\n");
+	printf("stack B target_pos:");
+	for (t_stack *tmp = B; tmp != NULL; tmp = tmp->next)
+	{
+		printf ("%i ", tmp->target_pos);
+	}
+	printf("\n");
+
+
+
 	free_stack(&A);
 	free_stack(&B);
 }

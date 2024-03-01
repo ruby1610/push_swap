@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marieke <marieke@student.42.fr>            +#+  +:+       +#+        */
+/*   By: maraasve <maraasve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 14:59:13 by marieke           #+#    #+#             */
-/*   Updated: 2024/02/27 15:52:37 by marieke          ###   ########.fr       */
+/*   Updated: 2024/03/01 15:34:21 by maraasve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,3 +37,29 @@ void	exit_error(t_stack **B, t_stack **A)
 	exit(1);
 }
 
+int	find_highest_index(t_stack *stack)
+{
+	int	highest;
+
+	highest = INT_MIN;
+	while (stack)
+	{
+		if (stack->index > highest)
+			highest = stack->index;
+		stack = stack->next;
+	}
+	return (highest);
+}
+
+int	get_stack_size(t_stack *stack)
+{
+	int	stack_size;
+
+	stack_size = 0;
+	while (stack)
+	{
+		stack_size++;
+		stack = stack->next;
+	}
+	return (stack_size);
+}

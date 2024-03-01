@@ -6,7 +6,7 @@
 /*   By: maraasve <maraasve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 15:59:32 by maraasve          #+#    #+#             */
-/*   Updated: 2024/02/28 16:56:10 by maraasve         ###   ########.fr       */
+/*   Updated: 2024/03/01 16:27:02 by maraasve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ typedef struct s_stack
 {
 	int				value;
 	int				index;
-	int				position;
+	int				pos;
 	int				target_pos;
 	int				cost_a;
 	int				cost_b;
@@ -29,6 +29,9 @@ typedef struct s_stack
 	struct s_stack	*next;
 }
 t_stack;
+
+/*cost*/
+
 
 /*input_checker*/
 int		input_checker(char *argv[]);
@@ -44,6 +47,7 @@ void	get_index(t_stack **A, int stack_size);
 /*utils*/
 void	free_stack(t_stack **stack);
 void	exit_error(t_stack **B, t_stack **A);
+int		find_highest_index(t_stack *stack);
 
 /*stack*/
 t_stack *stack_new(int value);
@@ -52,8 +56,9 @@ void	stack_add_bottom(t_stack **stack, t_stack **new);
 
 /*sort*/
 int		is_sorted(t_stack *A);
-void	sort(t_stack **A, t_stack **B, int stack_size);
-void	sort_three(t_stack **A, int stack_size);
+void	push_all_but_three(t_stack **A, t_stack **B, int stack_size);
+void	sort_bigger_stack(t_stack **A, t_stack **B, int stack_size);
+void	sort_three(t_stack **A);
 
 /*swap*/
 void	swap(t_stack **stack);
@@ -65,6 +70,12 @@ void	ss(t_stack **A, t_stack **B);
 void	push(t_stack **stack_src, t_stack **stack_dst);
 void	pa(t_stack **A, t_stack **B);
 void	pb(t_stack **A, t_stack **B);
+
+/*position*/
+void	get_target_position(t_stack **A, t_stack **B);
+void	get_position(t_stack **stack);
+int		get_target(t_stack **A, int b_index, int target_index, int target_pos);
+
 
 /*rotate*/
 void	rotate(t_stack **stack);

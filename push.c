@@ -6,7 +6,7 @@
 /*   By: maraasve <maraasve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 14:30:13 by maraasve          #+#    #+#             */
-/*   Updated: 2024/02/28 14:47:46 by maraasve         ###   ########.fr       */
+/*   Updated: 2024/03/01 15:24:05 by maraasve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ void	push(t_stack **stack_src, t_stack **stack_dst)
 
 void	pa(t_stack **A, t_stack **B)
 {
-	push(A, B);
+	push(B, A);
 	ft_putstr_fd("pa\n", 1);
 }
 
 void	pb(t_stack **A, t_stack **B)
 {
-	push(B, A);
+	push(A, B);
 	ft_putstr_fd("pb\n", 1);
 }

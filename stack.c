@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marieke <marieke@student.42.fr>            +#+  +:+       +#+        */
+/*   By: maraasve <maraasve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 16:04:43 by marieke           #+#    #+#             */
-/*   Updated: 2024/02/27 16:56:13 by marieke          ###   ########.fr       */
+/*   Updated: 2024/03/01 16:08:29 by maraasve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_stack *stack_new(int value)
 		return (NULL);
 	new->value = value;
 	new->index = 0;
-	new->position = -1;
+	new->pos = -1;
 	new->target_pos = -1;
 	new->cost_a = -1;
 	new->cost_b = -1;

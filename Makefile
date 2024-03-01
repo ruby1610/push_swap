@@ -6,7 +6,7 @@
 #    By: maraasve <maraasve@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/21 16:50:33 by maraasve          #+#    #+#              #
-#    Updated: 2024/02/28 16:56:41 by maraasve         ###   ########.fr        #
+#    Updated: 2024/03/01 16:08:11 by maraasve         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,8 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror -g
 AR = ar -rcs
 
-SRC =  input_check.c main.c parser.c push.c reverse_rotate.c \
-		rotate.c sort.c stack.c swap.c utils.c 
+SRC =  input_check.c main.c parser.c position.c push.c reverse_rotate.c \
+		rotate.c sort.c stack.c swap.c utils.c
 LIBFT_DIR = libft
 LIBFT_NAME = libft.a
 OBJ_DIR = obj

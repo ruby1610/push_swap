@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maraasve <maraasve@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marieke <marieke@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 15:59:01 by maraasve          #+#    #+#             */
-/*   Updated: 2024/03/01 16:19:53 by maraasve         ###   ########.fr       */
+/*   Updated: 2024/03/04 19:35:11 by marieke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(int argc, char *argv[])
 	int		stack_size;
 
 	if (argc < 2)
-		return (1);
+		return (0);
 	if (!input_checker(argv))
 		exit_error(NULL, NULL);
 	B = NULL;
@@ -61,12 +61,6 @@ int	main(int argc, char *argv[])
 	{
 		printf ("%i ", tmp->value);
 	}
-	printf("\n");
-	printf("stack A index:");
-	for (t_stack *tmp = A; tmp != NULL; tmp = tmp->next)
-	{
-		printf ("%i ", tmp->index);
-	}
 	printf("\n");	
 	printf("stack B:");
 	for (t_stack *tmp = B; tmp != NULL; tmp = tmp->next)
@@ -74,10 +68,10 @@ int	main(int argc, char *argv[])
 		printf ("%i ", tmp->value);
 	}
 	printf("\n");
-	printf("stack B index:");
+	printf("stack B pos:");
 	for (t_stack *tmp = B; tmp != NULL; tmp = tmp->next)
 	{
-		printf ("%i ", tmp->index);
+		printf ("%i ", tmp->pos);
 	}
 	printf("\n");
 	printf("stack B target_pos:");

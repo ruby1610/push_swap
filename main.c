@@ -6,7 +6,7 @@
 /*   By: marieke <marieke@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 15:59:01 by maraasve          #+#    #+#             */
-/*   Updated: 2024/03/04 19:35:11 by marieke          ###   ########.fr       */
+/*   Updated: 2024/03/06 16:01:51 by marieke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,72 +17,28 @@ int	main(int argc, char *argv[])
 {
 	t_stack	*A;
 	t_stack	*B;
+	char	**array;
 	int		stack_size;
 
-	if (argc < 2)
+	if (argc == 1)
 		return (0);
-	if (!input_checker(argv))
-		exit_error(NULL, NULL);
+	array = get_arguments(argc, argv);
+	if (!array)
+		exit_error(NULL, NULL, NULL, argc);
+	if (!input_checker(array))
+		exit_error(NULL, NULL, array, argc);
+	stack_size = get_stack_size(NULL, array);
 	B = NULL;
-	A = innit_stack(argc, argv);
+	A = innit_stack(argc, array, stack_size);
 	if (!A)
-		exit_error(NULL, NULL);
-	stack_size = argc - 1;
+		exit_error(NULL, NULL, array, argc);
 	get_index(&A, stack_size);
-
-
-	printf("stack A:");
-	for (t_stack *tmp = A; tmp != NULL; tmp = tmp->next)
-	{
-		printf ("%i ", tmp->value);
-	}
-	printf("\n");
-	printf("stack A index:");
-	for (t_stack *tmp = A; tmp != NULL; tmp = tmp->next)
-	{
-		printf ("%i ", tmp->index);
-	}
-	printf("\n");
-
-
-	
 	if (stack_size == 2 && !is_sorted(A))
 		sa(&A);
 	else if (stack_size == 3 && !is_sorted(A))
 		sort_three(&A);
 	else if (stack_size > 3 && !is_sorted(A))
 		sort_bigger_stack(&A, &B, stack_size);
-
-
-
-	
-	printf("stack A:");
-	for (t_stack *tmp = A; tmp != NULL; tmp = tmp->next)
-	{
-		printf ("%i ", tmp->value);
-	}
-	printf("\n");	
-	printf("stack B:");
-	for (t_stack *tmp = B; tmp != NULL; tmp = tmp->next)
-	{
-		printf ("%i ", tmp->value);
-	}
-	printf("\n");
-	printf("stack B pos:");
-	for (t_stack *tmp = B; tmp != NULL; tmp = tmp->next)
-	{
-		printf ("%i ", tmp->pos);
-	}
-	printf("\n");
-	printf("stack B target_pos:");
-	for (t_stack *tmp = B; tmp != NULL; tmp = tmp->next)
-	{
-		printf ("%i ", tmp->target_pos);
-	}
-	printf("\n");
-
-
-
 	free_stack(&A);
 	free_stack(&B);
 }

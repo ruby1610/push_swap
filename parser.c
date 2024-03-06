@@ -3,38 +3,53 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maraasve <maraasve@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marieke <marieke@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 13:48:35 by marieke           #+#    #+#             */
-/*   Updated: 2024/02/28 17:07:28 by maraasve         ###   ########.fr       */
+/*   Updated: 2024/03/06 16:05:57 by marieke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*innit_stack(int argc, char *argv[])
+char	**get_arguments(int argc, char *argv[])
+{
+	char	**array;
+
+	if (argc == 2)
+	{
+		array = ft_split(argv[1], ' ');
+		if (!array)
+			return (NULL);
+	}
+	else
+		array = &argv[1];
+	return (array);
+}
+
+t_stack	*innit_stack(int argc, char *arguments[], int stack_size)
 {
 	t_stack		*A;
 	t_stack		*new;
 	long int	nb;
 	int			i;
 
-	i = 1;
-	while(i < argc)
+	i = 0;
+	while(i < stack_size)
 	{
-		nb = ft_atoi(argv[i]);
+		nb = ft_atoi(arguments[i]);
 		if (nb < INT_MIN || nb > INT_MAX)
 			return (NULL);
-		if (i == 1)
+		if (i == 0)
 		{
 			A = stack_new((int)nb);
 			if (!A)
-				exit_error(NULL, NULL);
+				exit_error(NULL, NULL, arguments, argc);
 		}
 		else
 		{
 			new = stack_new((int)nb);
-			stack_add_bottom(&A, &new);
+			stack_add_bottom(&A, &new, arguments, argc);
 		}
 		i++;
 	}

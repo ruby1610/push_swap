@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maraasve <maraasve@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marieke <marieke@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 16:04:43 by marieke           #+#    #+#             */
-/*   Updated: 2024/03/01 16:08:29 by maraasve         ###   ########.fr       */
+/*   Updated: 2024/03/06 16:06:03 by marieke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ t_stack *stack_new(int value)
 	new->next = NULL;
 	return (new);
 }
-void	stack_add_bottom(t_stack **stack, t_stack **new)
+void	stack_add_bottom(t_stack **stack, t_stack **new, char **args, int argc)
 {
 	t_stack	*bottom;
 
 	if (!*new)
-		exit_error(stack, NULL);
+		exit_error(stack, NULL, args, argc);
 	if (!*stack)
 	{
 		*stack = *new;

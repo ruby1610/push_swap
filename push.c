@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maraasve <maraasve@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marieke <marieke@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 14:30:13 by maraasve          #+#    #+#             */
-/*   Updated: 2024/03/01 15:24:05 by maraasve         ###   ########.fr       */
+/*   Updated: 2024/03/05 17:23:14 by marieke          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ void	push(t_stack **stack_src, t_stack **stack_dst)
 	(*stack_src)->next = *stack_dst;
 	*stack_dst = *stack_src;
 	*stack_src = tmp;
-	(*stack_src)->previous = NULL;
+	if (*stack_src != NULL)
+		(*stack_src)->previous = NULL;
 }
 
 void	pa(t_stack **A, t_stack **B)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marieke <marieke@student.42.fr>            +#+  +:+       +#+        */
+/*   By: maraasve <maraasve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 14:30:13 by maraasve          #+#    #+#             */
-/*   Updated: 2024/03/05 17:23:14 by marieke          ###   ########.fr       */
+/*   Updated: 2024/03/07 16:09:15 by maraasve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	push(t_stack **stack_src, t_stack **stack_dst)
 {
 	t_stack	*tmp;
-	
+
 	if (*stack_src == NULL)
 		return ;
 	tmp = (*stack_src)->next;

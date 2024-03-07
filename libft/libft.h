@@ -6,7 +6,7 @@
 /*   By: maraasve <maraasve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 13:05:46 by maraasve          #+#    #+#             */
-/*   Updated: 2024/02/28 17:06:47 by maraasve         ###   ########.fr       */
+/*   Updated: 2024/03/07 16:14:13 by maraasve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-long int		ft_atoi(char *str);
+long int	ft_atoi(char *str);
 int			ft_isalnum(int c);
 int			ft_isalpha(int c);
 int			ft_isascii(int c);
@@ -44,7 +44,7 @@ char		*ft_strdup(char *s1);
 char		*ft_strjoin(char *s1, char *s2);
 char		*ft_strmapi(char *s, char (*f)(unsigned int, char));
 char		*ft_strnstr(char *haystack, char *needle, size_t len);
-char			*ft_strchr(char *s, int c);
+char		*ft_strchr(char *s, int c);
 char		*ft_strrchr(char *s, int c);
 char		*ft_strtrim(char *s1, char *set);
 char		*ft_substr(char *s, unsigned int start, size_t len);

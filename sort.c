@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marieke <marieke@student.42.fr>            +#+  +:+       +#+        */
+/*   By: maraasve <maraasve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 14:03:26 by maraasve          #+#    #+#             */
-/*   Updated: 2024/03/06 15:56:36 by marieke          ###   ########.fr       */
+/*   Updated: 2024/03/07 16:12:10 by maraasve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	push_all_but_three(t_stack **A, t_stack **B, int stack_size)
 }
 
 void	sort_three(t_stack **stack)
-{	
+{
 	int	highest;
 
 	if (stack == NULL || *stack == NULL)

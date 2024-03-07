@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marieke <marieke@student.42.fr>            +#+  +:+       +#+        */
+/*   By: maraasve <maraasve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 16:04:43 by marieke           #+#    #+#             */
-/*   Updated: 2024/03/06 16:06:03 by marieke          ###   ########.fr       */
+/*   Updated: 2024/03/07 16:12:38 by maraasve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack *stack_new(int value)
+t_stack	*stack_new(int value)
 {
-	t_stack *new;
-	
+	t_stack	*new;
+
 	new = (t_stack *)malloc(sizeof(t_stack));
 	if (!new)
 		return (NULL);
@@ -29,6 +29,7 @@ t_stack *stack_new(int value)
 	new->next = NULL;
 	return (new);
 }
+
 void	stack_add_bottom(t_stack **stack, t_stack **new, char **args, int argc)
 {
 	t_stack	*bottom;

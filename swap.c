@@ -6,7 +6,7 @@
 /*   By: maraasve <maraasve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 14:10:08 by maraasve          #+#    #+#             */
-/*   Updated: 2024/02/28 16:47:46 by maraasve         ###   ########.fr       */
+/*   Updated: 2024/03/07 15:51:46 by maraasve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,5 @@ void	ss(t_stack **A, t_stack **B)
 {
 	swap(A);
 	swap(B);
-	ft_putstr_fd("ss\n", 1);	
+	ft_putstr_fd("ss\n", 1);
 }

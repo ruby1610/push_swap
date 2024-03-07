@@ -6,7 +6,7 @@
 /*   By: maraasve <maraasve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 17:22:53 by maraasve          #+#    #+#             */
-/*   Updated: 2024/02/21 17:38:04 by maraasve         ###   ########.fr       */
+/*   Updated: 2024/03/07 15:51:27 by maraasve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int	has_duplicates(char *argv[])
 {
 	int	i;
 	int	j;
+	int	num1;
+	int	num2;
 
 	i = 0;
 	while (argv[i])
@@ -30,7 +32,9 @@ int	has_duplicates(char *argv[])
 		j = i + 1;
 		while (argv[j])
 		{
-			if (ft_strcmp_nb(argv[i], argv[j]) == 0)
+			num1 = ft_atoi(argv[i]);
+			num2 = ft_atoi(argv[j]);
+			if (num1 == num2)
 				return (1);
 			j++;
 		}

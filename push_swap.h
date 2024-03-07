@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marieke <marieke@student.42.fr>            +#+  +:+       +#+        */
+/*   By: maraasve <maraasve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 15:59:32 by maraasve          #+#    #+#             */
-/*   Updated: 2024/03/06 15:58:01 by marieke          ###   ########.fr       */
+/*   Updated: 2024/03/07 16:14:55 by maraasve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,7 @@ typedef struct s_stack
 	int				cost_b;
 	struct s_stack	*previous;
 	struct s_stack	*next;
-}
-t_stack;
+}	t_stack;
 
 /*cost*/
 void	get_cost(t_stack **stack_a, t_stack **stack_b);
@@ -53,7 +52,7 @@ int		find_highest_index(t_stack *stack);
 int		get_stack_size(t_stack *stack, char **array);
 
 /*stack*/
-t_stack *stack_new(int value);
+t_stack	*stack_new(int value);
 t_stack	*get_bottom(t_stack *stack);
 void	stack_add_bottom(t_stack **stack, t_stack **new, char **args, int argc);
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marieke <marieke@student.42.fr>            +#+  +:+       +#+        */
+/*   By: maraasve <maraasve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 13:48:35 by marieke           #+#    #+#             */
-/*   Updated: 2024/03/06 16:05:57 by marieke          ###   ########.fr       */
+/*   Updated: 2024/03/07 16:12:55 by maraasve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,36 +29,36 @@ char	**get_arguments(int argc, char *argv[])
 
 t_stack	*innit_stack(int argc, char *arguments[], int stack_size)
 {
-	t_stack		*A;
+	t_stack		*a;
 	t_stack		*new;
 	long int	nb;
 	int			i;
 
 	i = 0;
-	while(i < stack_size)
+	while (i < stack_size)
 	{
 		nb = ft_atoi(arguments[i]);
 		if (nb < INT_MIN || nb > INT_MAX)
 			return (NULL);
 		if (i == 0)
 		{
-			A = stack_new((int)nb);
-			if (!A)
+			a = stack_new((int)nb);
+			if (!a)
 				exit_error(NULL, NULL, arguments, argc);
 		}
 		else
 		{
 			new = stack_new((int)nb);
-			stack_add_bottom(&A, &new, arguments, argc);
+			stack_add_bottom(&a, &new, arguments, argc);
 		}
 		i++;
 	}
-	return (A);
+	return (a);
 }
 
-void	get_index(t_stack **A, int stack_size)
+void	get_index(t_stack **a, int stack_size)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 	t_stack	*lowest_ptr;
 	int		lowest_value;
 	int		index;
@@ -66,7 +66,7 @@ void	get_index(t_stack **A, int stack_size)
 	index = 1;
 	while (index <= stack_size)
 	{
-		tmp = *A;
+		tmp = *a;
 		lowest_value = INT_MAX;
 		lowest_ptr = NULL;
 		while (tmp)
@@ -77,7 +77,7 @@ void	get_index(t_stack **A, int stack_size)
 			{
 				lowest_value = tmp->value;
 				lowest_ptr = tmp;
-				tmp = *A;
+				tmp = *a;
 			}
 			else
 				tmp = tmp->next;

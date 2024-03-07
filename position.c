@@ -6,7 +6,7 @@
 /*   By: maraasve <maraasve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 15:31:41 by maraasve          #+#    #+#             */
-/*   Updated: 2024/03/01 16:18:03 by maraasve         ###   ########.fr       */
+/*   Updated: 2024/03/07 15:53:06 by maraasve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,46 +29,46 @@ void	get_position(t_stack **stack)
 
 int	get_target(t_stack **A, int b_index, int target_index, int target_pos)
 {
-	t_stack	*tmpA;
-	
-	tmpA = *A;
-	while (tmpA)
+	t_stack	*tmp_a;
+
+	tmp_a = *A;
+	while (tmp_a)
 	{
-		if (tmpA->index > b_index && tmpA->index < target_index)
+		if (tmp_a->index > b_index && tmp_a->index < target_index)
 		{
-			target_index = tmpA->index;
-			target_pos = tmpA->pos;
+			target_index = tmp_a->index;
+			target_pos = tmp_a->pos;
 		}
-		tmpA = tmpA->next;
+		tmp_a = tmp_a->next;
 	}
 	if (target_index != INT_MAX)
 		return (target_pos);
-	tmpA = *A;
-	while (tmpA)
+	tmp_a = *A;
+	while (tmp_a)
 	{
-		if (tmpA->index < target_index)
+		if (tmp_a->index < target_index)
 		{
-			target_index = tmpA->index;
-			target_pos = tmpA->pos;
+			target_index = tmp_a->index;
+			target_pos = tmp_a->pos;
 		}
-		tmpA = tmpA->next;
+		tmp_a = tmp_a->next;
 	}
 	return (target_pos);
 }
 
 void	get_target_position(t_stack **A, t_stack **B)
 {
-	t_stack	*tmpB;
+	t_stack	*tmp_b;
 	int		target_pos;
 
-	tmpB = *B;
+	tmp_b = *B;
 	get_position(A);
 	get_position(B);
 	target_pos = 0;
-	while (tmpB)
+	while (tmp_b)
 	{
-		target_pos = get_target(A, tmpB->index, INT_MAX, target_pos);
-		tmpB->target_pos = target_pos;
-		tmpB = tmpB->next;
+		target_pos = get_target(A, tmp_b->index, INT_MAX, target_pos);
+		tmp_b->target_pos = target_pos;
+		tmp_b = tmp_b->next;
 	}
 }

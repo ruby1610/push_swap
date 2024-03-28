@@ -6,7 +6,7 @@
 /*   By: maraasve <maraasve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 14:59:13 by marieke           #+#    #+#             */
-/*   Updated: 2024/03/07 16:13:36 by maraasve         ###   ########.fr       */
+/*   Updated: 2024/03/28 14:56:21 by maraasve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,19 @@ void	free_stack(t_stack **stack)
 		*stack = tmp;
 	}
 	*stack = NULL;
+}
+
+void	free_arr(char **array)
+{
+	int	i;
+
+	i = 0;
+	while (array[i] != NULL)
+	{
+		free(array[i]);
+		i++;
+	}
+	free(array);
 }
 
 void	exit_error(t_stack **B, t_stack **A, char **array, int argc)

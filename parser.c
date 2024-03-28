@@ -6,7 +6,7 @@
 /*   By: maraasve <maraasve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 13:48:35 by marieke           #+#    #+#             */
-/*   Updated: 2024/03/07 16:12:55 by maraasve         ###   ########.fr       */
+/*   Updated: 2024/03/07 16:26:20 by maraasve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	**get_arguments(int argc, char *argv[])
 	return (array);
 }
 
-t_stack	*innit_stack(int argc, char *arguments[], int stack_size)
+t_stack	*innit_stack(int argc, char *arguments[], int st_sze)
 {
 	t_stack		*a;
 	t_stack		*new;
@@ -35,7 +35,7 @@ t_stack	*innit_stack(int argc, char *arguments[], int stack_size)
 	int			i;
 
 	i = 0;
-	while (i < stack_size)
+	while (i < st_sze)
 	{
 		nb = ft_atoi(arguments[i]);
 		if (nb < INT_MIN || nb > INT_MAX)
@@ -56,34 +56,32 @@ t_stack	*innit_stack(int argc, char *arguments[], int stack_size)
 	return (a);
 }
 
-void	get_index(t_stack **a, int stack_size)
+void	get_index(t_stack **a, int st_sze, int low_val, t_stack *low_ptr)
 {
 	t_stack	*tmp;
-	t_stack	*lowest_ptr;
-	int		lowest_value;
 	int		index;
 
 	index = 1;
-	while (index <= stack_size)
+	while (index <= st_sze)
 	{
 		tmp = *a;
-		lowest_value = INT_MAX;
-		lowest_ptr = NULL;
+		low_val = INT_MAX;
+		low_ptr = NULL;
 		while (tmp)
 		{
 			if (tmp->value == INT_MAX && tmp->index == 0)
-				tmp->index = stack_size;
-			if (tmp->value < lowest_value && tmp->index == 0)
+				tmp->index = st_sze;
+			if (tmp->value < low_val && tmp->index == 0)
 			{
-				lowest_value = tmp->value;
-				lowest_ptr = tmp;
+				low_val = tmp->value;
+				low_ptr = tmp;
 				tmp = *a;
 			}
 			else
 				tmp = tmp->next;
 		}
-		if (lowest_ptr != NULL)
-			lowest_ptr->index = index;
+		if (low_ptr != NULL)
+			low_ptr->index = index;
 		index++;
 	}
 }

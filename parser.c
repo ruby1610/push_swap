@@ -6,7 +6,7 @@
 /*   By: maraasve <maraasve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 13:48:35 by marieke           #+#    #+#             */
-/*   Updated: 2024/03/07 16:26:20 by maraasve         ###   ########.fr       */
+/*   Updated: 2024/04/30 18:11:30 by maraasve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,26 @@ t_stack	*innit_stack(int argc, char *arguments[], int st_sze)
 	return (a);
 }
 
+void	find_lowest_unindexed(t_stack **a, int *low_val, t_stack **low_ptr)
+{
+	t_stack	*tmp;
+
+	*tmp = *a;
+	*low_val = INT_MAX;
+	*low_ptr = NULL;
+	while (tmp)
+	{
+		if (tmp->value == INT_MAX && tmp->index == 0)
+			tmp->index = stack_size(*a);
+		if (tmp->value < *low_val && tmp->index == 0)
+		{
+			*low_val = tmp->value;
+			*low_ptr = tmp;
+		}
+		tmp = tmp->next;
+	}
+}
+
 void	get_index(t_stack **a, int st_sze, int low_val, t_stack *low_ptr)
 {
 	t_stack	*tmp;
@@ -64,22 +84,7 @@ void	get_index(t_stack **a, int st_sze, int low_val, t_stack *low_ptr)
 	index = 1;
 	while (index <= st_sze)
 	{
-		tmp = *a;
-		low_val = INT_MAX;
-		low_ptr = NULL;
-		while (tmp)
-		{
-			if (tmp->value == INT_MAX && tmp->index == 0)
-				tmp->index = st_sze;
-			if (tmp->value < low_val && tmp->index == 0)
-			{
-				low_val = tmp->value;
-				low_ptr = tmp;
-				tmp = *a;
-			}
-			else
-				tmp = tmp->next;
-		}
+		find_lowest_unindexed(a, low_val, &low_ptr);
 		if (low_ptr != NULL)
 			low_ptr->index = index;
 		index++;

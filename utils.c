@@ -6,7 +6,7 @@
 /*   By: maraasve <maraasve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 14:59:13 by marieke           #+#    #+#             */
-/*   Updated: 2024/03/28 14:56:21 by maraasve         ###   ########.fr       */
+/*   Updated: 2024/05/01 15:52:33 by maraasve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,10 +87,13 @@ int	get_stack_size(t_stack *stack, char **array)
 			stack_size++;
 		return (stack_size);
 	}
-	while (stack)
+	else
 	{
-		stack_size++;
-		stack = stack->next;
+		while (stack)
+		{
+			stack_size++;
+			stack = stack->next;
+		}
 	}
 	return (stack_size);
 }

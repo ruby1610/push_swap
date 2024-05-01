@@ -6,7 +6,7 @@
 /*   By: maraasve <maraasve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 16:04:43 by marieke           #+#    #+#             */
-/*   Updated: 2024/03/07 16:12:38 by maraasve         ###   ########.fr       */
+/*   Updated: 2024/05/01 17:24:05 by maraasve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,10 @@ void	stack_add_bottom(t_stack **stack, t_stack **new, char **args, int argc)
 	t_stack	*bottom;
 
 	if (!*new)
+	{
+		free_stack(stack);
 		exit_error(stack, NULL, args, argc);
+	}
 	if (!*stack)
 	{
 		*stack = *new;

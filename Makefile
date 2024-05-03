@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marieke <marieke@student.42.fr>            +#+  +:+       +#+         #
+#    By: maraasve <maraasve@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/21 16:50:33 by maraasve          #+#    #+#              #
-#    Updated: 2024/03/05 17:04:52 by marieke          ###   ########.fr        #
+#    Updated: 2024/05/03 16:21:33 by maraasve         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ AR = ar -rcs
 SRC =  input_check.c main.c parser.c position.c push.c reverse_rotate.c \
 		rotate.c sort.c stack.c swap.c utils.c cost.c move.c
 LIBFT_DIR = libft
-LIBFT_NAME = libft.a
+LIBFT_NAME = $(LIBFT_DIR)/libft.a
 OBJ_DIR = obj
 OBJ = $(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
 

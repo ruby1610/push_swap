@@ -6,7 +6,7 @@
 /*   By: maraasve <maraasve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 13:48:35 by marieke           #+#    #+#             */
-/*   Updated: 2024/05/15 16:55:56 by maraasve         ###   ########.fr       */
+/*   Updated: 2024/05/20 13:37:57 by maraasve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,23 +19,23 @@ t_stack	*init_stack(char *arguments[], int st_sze)
 	long int	nb;
 	int			i;
 
+	a = NULL;
 	i = 0;
 	while (i < st_sze)
 	{
 		nb = ft_atoi(arguments[i]);
 		if (nb < INT_MIN || nb > INT_MAX)
+		{
+			free_stack(&a);
 			return (NULL);
-		if (i == 0)
-		{
-			a = stack_new((int)nb);
-			if (!a)
-				exit_error(NULL, NULL);
 		}
-		else
+		new = stack_new((int)nb);
+		if (!new)
 		{
-			new = stack_new((int)nb);
-			stack_add_bottom(&a, &new);
+			free_stack(&a);
+			exit_error(NULL, NULL);
 		}
+		stack_add_bottom(&a, &new);
 		i++;
 	}
 	return (a);

@@ -6,7 +6,7 @@
 /*   By: maraasve <maraasve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 15:59:01 by maraasve          #+#    #+#             */
-/*   Updated: 2024/05/15 16:50:15 by maraasve         ###   ########.fr       */
+/*   Updated: 2024/05/20 13:50:09 by maraasve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ int	main(int argc, char *argv[])
 	t_stack	*b;
 	int		stack_size;
 
-	if (argc < 3)
-		exit_error(NULL, NULL);
+	if (argc == 1)
+		return (0);
 	if (!input_checker(&argv[1]))
 		exit_error(NULL, NULL);
 	stack_size = get_stack_size(NULL, &argv[1]);
@@ -41,4 +41,5 @@ int	main(int argc, char *argv[])
 	start_sorting(stack_size, &a, &b);
 	free_stack(&a);
 	free_stack(&b);
+	return (0);
 }

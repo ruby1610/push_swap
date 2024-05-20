@@ -6,7 +6,7 @@
 /*   By: maraasve <maraasve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 15:59:32 by maraasve          #+#    #+#             */
-/*   Updated: 2024/05/15 16:55:44 by maraasve         ###   ########.fr       */
+/*   Updated: 2024/05/20 13:30:10 by maraasve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ int		is_sign(char c);
 /*parser*/
 t_stack	*init_stack(char *arguments[], int stack_size);
 void	get_index(t_stack **a, int st_sze, int low_val, t_stack *low_ptr);
-char	**get_arguments(int argc, char *argv[]);
 
 /*utils*/
 void	free_stack(t_stack **stack);
